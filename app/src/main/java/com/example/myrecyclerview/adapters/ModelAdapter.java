@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,6 +42,44 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.viewHolder>{
 
         holder.imageView.setImageResource(list.get(position).getImageViewOne());
         holder.textView.setText(list.get(position).getTextViewOne());
+
+        switch(position){
+            case 0 :
+                holder.imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(context,"Image 1 is clicked!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                holder.textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(context,"Text 1 is clicked!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                break;
+            case 1 :
+                holder.imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(context,"Image 2 is clicked!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                holder.textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(context,"Text 2 is clicked!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                break;
+
+        }
+
+
+
+
 
     }
 
